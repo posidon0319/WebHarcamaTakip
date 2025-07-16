@@ -338,4 +338,3 @@ C:\Users\farukserdar.degirmi\desktop\WebHarcamaTakip\WebHarcamaTakip\obj\Debug\n
 C:\Users\farukserdar.degirmi\desktop\WebHarcamaTakip\WebHarcamaTakip\obj\Debug\net9.0\WebHarcamaTakip.pdb
 C:\Users\farukserdar.degirmi\desktop\WebHarcamaTakip\WebHarcamaTakip\obj\Debug\net9.0\WebHarcamaTakip.genruntimeconfig.cache
 C:\Users\farukserdar.degirmi\desktop\WebHarcamaTakip\WebHarcamaTakip\obj\Debug\net9.0\ref\WebHarcamaTakip.dll
-C:\Users\farukserdar.degirmi\Desktop\WebHarcamaTakip\WebHarcamaTakip\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

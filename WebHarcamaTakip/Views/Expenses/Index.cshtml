@@ -1,12 +1,20 @@
 ﻿@model IEnumerable<WebHarcamaTakip.Models.Expense>
 @{
-    ViewData["Title"] = "Expenses";
+    ViewData["Title"] = "Harcamalar";
 }
-<h2>Expenses</h2>
-<a href="/Expenses/Create">Add New Expense</a>
-<table>
+<h2>Harcamalar & Gelirler</h2>
+<a href="/Expenses/Create">Yeni Kayıt Ekle</a>
+<p>
+    <b>Bakiye:</b> @ViewBag.Total TL
+</p>
+<table border="1" cellpadding="6">
     <tr>
-        <th>Date</th><th>Description</th><th>Category</th><th>Amount</th>
+        <th>Tarih</th>
+        <th>Açıklama</th>
+        <th>Kategori</th>
+        <th>Tür</th>
+        <th>Tutar</th>
+        <th>Sil</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -14,7 +22,9 @@
             <td>@item.Date.ToShortDateString()</td>
             <td>@item.Description</td>
             <td>@item.Category</td>
+            <td>@(item.IsIncome ? "Gelir" : "Gider")</td>
             <td>@item.Amount</td>
+            <td><a href="/Expenses/Delete/@item.Id">Sil</a></td>
         </tr>
     }
 </table>
