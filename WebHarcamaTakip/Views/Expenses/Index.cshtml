@@ -2,29 +2,39 @@
 @{
     ViewData["Title"] = "Harcamalar";
 }
-<h2>Harcamalar & Gelirler</h2>
-<a href="/Expenses/Create">Yeni Kayıt Ekle</a>
-<p>
-    <b>Bakiye:</b> @ViewBag.Total TL
-</p>
-<table border="1" cellpadding="6">
-    <tr>
-        <th>Tarih</th>
-        <th>Açıklama</th>
-        <th>Kategori</th>
-        <th>Tür</th>
-        <th>Tutar</th>
-        <th>Sil</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Date.ToShortDateString()</td>
-            <td>@item.Description</td>
-            <td>@item.Category</td>
-            <td>@(item.IsIncome ? "Gelir" : "Gider")</td>
-            <td>@item.Amount</td>
-            <td><a href="/Expenses/Delete/@item.Id">Sil</a></td>
-        </tr>
-    }
-</table>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Harcamalar & Gelirler</h2>
+        <a href="/Expenses/Create" class="btn btn-primary">Yeni Kayıt Ekle</a>
+    </div>
+    <div class="alert alert-info">
+        <b>Bakiye:</b> @ViewBag.Total TL
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Tarih</th>
+                <th>Açıklama</th>
+                <th>Kategori</th>
+                <th>Tür</th>
+                <th>Tutar</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Date.ToShortDateString()</td>
+                    <td>@item.Description</td>
+                    <td>@item.Category</td>
+                    <td>@(item.IsIncome ? "Gelir" : "Gider")</td>
+                    <td>@item.Amount</td>
+                    <td>
+                        <a href="/Expenses/Delete/@item.Id" class="btn btn-danger btn-sm">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

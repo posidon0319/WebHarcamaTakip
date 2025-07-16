@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebHarcamaTakip")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c7891bcca757846abdac68f3542c25cc61436da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3e0cde12e2c6adc5ebb81d531cb13ca16bab25b")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebHarcamaTakip")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebHarcamaTakip")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

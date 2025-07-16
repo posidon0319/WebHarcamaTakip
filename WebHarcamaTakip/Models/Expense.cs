@@ -7,5 +7,8 @@
         public decimal Amount { get; set; }
         public string Category { get; set; }
         public DateTime Date { get; set; }
+        public bool IsIncome { get; set; }  // <-- Bu satır olmalı!
+        public string ExpenseType { get; set; }   // "Gelir" veya "Gider"
+
     }
 }

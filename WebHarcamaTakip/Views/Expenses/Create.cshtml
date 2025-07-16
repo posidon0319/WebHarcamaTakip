@@ -2,22 +2,29 @@
 @{
     ViewData["Title"] = "Kayıt Ekle";
 }
-<h2>Yeni Kayıt Ekle</h2>
-<form asp-action="Create" method="post">
-    <label>Açıklama:</label>
-    <input asp-for="Description" required /><br />
-
-    <label>Kategori:</label>
-    <input asp-for="Category" required /><br />
-
-    <label>Tutar:</label>
-    <input asp-for="Amount" required /><br />
-
-    <label>Tür:</label>
-    <select asp-for="IsIncome">
-        <option value="false">Gider</option>
-        <option value="true">Gelir</option>
-    </select><br />
-
-    <button type="submit">Kaydet</button>
-</form>
+<div class="container mt-4">
+    <h2>Yeni Kayıt Ekle</h2>
+    <form asp-action="Create" method="post" class="card p-4 shadow-sm">
+        <div class="mb-3">
+            <label class="form-label">Açıklama:</label>
+            <input asp-for="Description" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Kategori:</label>
+            <input asp-for="Category" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tutar:</label>
+            <input asp-for="Amount" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tür:</label>
+            <select asp-for="IsIncome" class="form-select">
+                <option value="false">Gider</option>
+                <option value="true">Gelir</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Kaydet</button>
+        <a href="/Expenses" class="btn btn-secondary ms-2">Vazgeç</a>
+    </form>
+</div>
