@@ -1,0 +1,23 @@
+﻿@model WebHarcamaTakip.Models.User
+@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+<div class="container mt-4">
+    <h2>Kayıt Ol</h2>
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+    <form asp-action="Register" method="post" class="card p-4 shadow-sm">
+        <div class="mb-3">
+            <label class="form-label">Kullanıcı Adı:</label>
+            <input asp-for="Username" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Şifre:</label>
+            <input asp-for="Password" type="password" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-success">Kayıt Ol</button>
+        <a href="/Account/Login" class="btn btn-secondary ms-2">Giriş Yap</a>
+    </form>
+</div>

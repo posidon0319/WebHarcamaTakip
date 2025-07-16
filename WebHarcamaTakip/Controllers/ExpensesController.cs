@@ -8,8 +8,13 @@ namespace WebHarcamaTakip.Controllers
 {
     public class ExpensesController : Controller
     {
+        // Her action'ın başında login kontrolü yapılıyor.
+
         public IActionResult Index(string? category, bool? income)
         {
+            if (string.IsNullOrEmpty(HttpContext.Request.Cookies["username"]))
+                return RedirectToAction("Login", "Account");
+
             var expenses = ExpenseService.GetAll();
             if (!string.IsNullOrEmpty(category))
                 expenses = expenses.Where(x => x.Category == category).ToList();
@@ -25,12 +30,17 @@ namespace WebHarcamaTakip.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            if (string.IsNullOrEmpty(HttpContext.Request.Cookies["username"]))
+                return RedirectToAction("Login", "Account");
             return View();
         }
 
         [HttpPost]
         public IActionResult Create(Expense expense)
         {
+            if (string.IsNullOrEmpty(HttpContext.Request.Cookies["username"]))
+                return RedirectToAction("Login", "Account");
+
             expense.Date = DateTime.Now;
             ExpenseService.Add(expense);
             return RedirectToAction("Index");
@@ -38,6 +48,9 @@ namespace WebHarcamaTakip.Controllers
 
         public IActionResult Delete(int id)
         {
+            if (string.IsNullOrEmpty(HttpContext.Request.Cookies["username"]))
+                return RedirectToAction("Login", "Account");
+
             ExpenseService.Delete(id);
             return RedirectToAction("Index");
         }

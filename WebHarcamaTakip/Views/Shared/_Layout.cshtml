@@ -32,6 +32,34 @@
                 </div>
             </div>
         </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">WebHarcamaTakip</a>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav">
+                        @if (Context.Request.Cookies["username"] != null)
+                {
+                        <li class="nav-item">
+                            <span class="navbar-text text-white">Merhaba, @Context.Request.Cookies["username"]</span>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Account/Logout" class="btn btn-outline-danger btn-sm ms-2">Çıkış</a>
+                        </li>
+                }
+                else
+                {
+                        <li class="nav-item">
+                            <a href="/Account/Login" class="btn btn-primary btn-sm ms-2">Giriş Yap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Account/Register" class="btn btn-outline-secondary btn-sm ms-2">Kayıt Ol</a>
+                        </li>
+                }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -48,7 +76,8 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </html>
