@@ -1,0 +1,14 @@
+﻿@model WebHarcamaTakip.Models.Expense
+@{
+    ViewData["Title"] = "Add Expense";
+}
+<h2>Add Expense</h2>
+<form asp-action="Create" method="post">
+    <label>Description:</label>
+    <input asp-for="Description" /><br />
+    <label>Category:</label>
+    <input asp-for="Category" /><br />
+    <label>Amount:</label>
+    <input asp-for="Amount" /><br />
+    <button type="submit">Save</button>
+</form>

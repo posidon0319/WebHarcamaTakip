@@ -27,3 +27,7 @@ app.MapControllerRoute(
 
 
 app.Run();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Expenses}/{action=Index}/{id?}");
+
